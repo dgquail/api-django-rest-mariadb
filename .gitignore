@@ -1,0 +1,66 @@
+# Archivos del entorno Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Entorno virtual
+venv/
+env/
+.virtualenv/
+
+# Archivos de configuración local
+*.env
+.env.*
+
+# Bases de datos locales y archivos relacionados
+db.sqlite3
+*.db
+
+# Archivos creados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+logs/
+*.out
+*.err
+
+# Configuraciones de Docker
+docker-compose.override.yml
+.docker/
+
+# Archivos generados por IDEs y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# Archivos de testeo o debugging
+coverage/
+*.coverage
+htmlcov/
+nosetests.xml
+*.testresult
+
+# Archivos estáticos generados
+staticfiles/
+static/
+
+# Archivos de migraciones no revisados
+migrations/*
+
+# Archivos de almacenamiento local (media)
+media/
+
+# Archivos comprimidos o empaquetados
+*.gz
+*.zip
+*.tar
+*.tgz
+
+# Otros
+*.bak
+*.tmp
