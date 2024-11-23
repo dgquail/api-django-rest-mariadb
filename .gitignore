@@ -10,8 +10,8 @@ env/
 .virtualenv/
 
 # Archivos de configuración local
-*.env
-.env.*
+##*.env
+##.env.*
 
 # Bases de datos locales y archivos relacionados
 db.sqlite3
