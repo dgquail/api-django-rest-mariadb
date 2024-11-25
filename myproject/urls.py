@@ -18,13 +18,31 @@ from django.contrib import admin # type: ignore
 from django.urls import include, path # type: ignore
 from rest_framework import routers
 
-from myapi import views
+from myapi.views import (
+    ConfigListCreateView, ConfigDetailView,
+    LanguageListCreateView, LanguageDetailView,
+    SourceListCreateView, SourceDetailView, SourceViewSet, 
+    SpeakerListCreateView, SpeakerDetailView,
+    SpeechListCreateView, SpeechDetailView, 
+    UserViewSet,GroupViewSet
+)
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
+router.register(r'sources', SourceViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('config/', ConfigListCreateView.as_view(), name='config-list-create'),
+    path('config/<int:pk>/', ConfigDetailView.as_view(), name='config-detail'),
+    path('languages/', LanguageListCreateView.as_view(), name='language-list-create'),
+    path('Languages/<int:pk>/', LanguageDetailView.as_view(), name='language-detail'),
+    path('sources/', SourceListCreateView.as_view(), name='source-list-create'),
+    path('sources/<int:pk>/', SourceDetailView.as_view(), name='source-detail'),
+    path('speakers/', SpeakerListCreateView.as_view(), name='speaker-list-create'),
+    path('speakers/<int:pk>/', SpeakerDetailView.as_view(), name='speaker-detail'),
+    path('speeches/', SpeechListCreateView.as_view(), name='speech-list-create'),
+    path('speeches/<int:pk>/', SpeechDetailView.as_view(), name='speech-detail'),
 ]
