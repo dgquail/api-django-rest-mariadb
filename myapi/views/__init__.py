@@ -5,3 +5,4 @@ from .source_view import SourceListCreateView, SourceDetailView, SourceViewSet
 from .speaker_view import SpeakerListCreateView, SpeakerDetailView
 from .speech_view import SpeechListCreateView, SpeechDetailView
 from .user_view import UserViewSet
+from .test_view import CustomEndpoint

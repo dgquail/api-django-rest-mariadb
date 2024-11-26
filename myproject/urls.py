@@ -24,7 +24,8 @@ from myapi.views import (
     SourceListCreateView, SourceDetailView, SourceViewSet, 
     SpeakerListCreateView, SpeakerDetailView,
     SpeechListCreateView, SpeechDetailView, 
-    UserViewSet,GroupViewSet
+    UserViewSet,GroupViewSet,
+    CustomEndpoint
 )
 
 router = routers.DefaultRouter()
@@ -45,4 +46,5 @@ urlpatterns = [
     path('speakers/<int:pk>/', SpeakerDetailView.as_view(), name='speaker-detail'),
     path('speeches/', SpeechListCreateView.as_view(), name='speech-list-create'),
     path('speeches/<int:pk>/', SpeechDetailView.as_view(), name='speech-detail'),
+    path('custom-endpoint/', CustomEndpoint.as_view(), name='custom-endpoint'),
 ]

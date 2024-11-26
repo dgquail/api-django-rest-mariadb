@@ -19,8 +19,8 @@ class SourceDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class SourceViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows sources to be viewed or edited.
     """
     queryset = Source.objects.all().order_by('-created_at')
     serializer_class = SourceSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
